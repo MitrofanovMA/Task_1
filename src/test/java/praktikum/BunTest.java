@@ -38,13 +38,13 @@ public class BunTest {
     }
 
     @Test
-    public void TestGetName() {
+    public void testGetName() {
         assertEquals("Название булочки должно совпадать с переданным в конструктор", name, bun.getName());
 
     }
 
     @Test
-    public void TestGetPrice() {
+    public void testGetPrice() {
         assertEquals("Цена булочки должна совпадать с переданной в конструктор", price, bun.getPrice(), 0.001f);
     }
 }

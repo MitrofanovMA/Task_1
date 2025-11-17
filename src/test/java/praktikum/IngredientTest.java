@@ -41,17 +41,17 @@ public class IngredientTest {
     }
 
     @Test
-    public void TestGetPrice() {
+    public void testGetPrice() {
         assertEquals("Цена ингредиента должна совпадать", price, ingredient.getPrice(), 0.001f);
     }
 
     @Test
-    public void TestGetName() {
+    public void testGetName() {
         assertEquals("Имя ингредиента должна совпадать", name, ingredient.getName());
     }
 
     @Test
-    public void TestGetType() {
+    public void testGetType() {
         assertEquals("Тип ингредиента должна совпадать", type, ingredient.getType());
     }
 }

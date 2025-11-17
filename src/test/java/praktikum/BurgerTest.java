@@ -52,20 +52,20 @@ public class BurgerTest {
     }
 
     @Test
-    public void TestSetBuns() {
+    public void testSetBuns() {
         Mockito.when(mockBun.getPrice()).thenReturn(bunPrice);
         Mockito.when(mockBun.getName()).thenReturn("mock_bun");
         burger.setBuns(mockBun);
         assertEquals(mockBun, burger.bun);
     }
     @Test
-    public void TestSetNullBuns() {
+    public void testSetNullBuns() {
         burger.setBuns(null);
         assertNull(burger.bun);
     }
 
     @Test
-    public void TestAddIngredient() {
+    public void testAddIngredient() {
         Mockito.when(mockIngredient1.getPrice()).thenReturn(ingredientPrice);
         burger.addIngredient(mockIngredient1);
         assertEquals(1, burger.ingredients.size());
@@ -74,7 +74,7 @@ public class BurgerTest {
 
 
     @Test
-    public void TestRemoveIngredient() {
+    public void testRemoveIngredient() {
         burger.addIngredient(mockIngredient1);
         burger.addIngredient(mockIngredient2);
 
@@ -83,7 +83,7 @@ public class BurgerTest {
         assertEquals(mockIngredient2, burger.ingredients.get(0));
     }
     @Test
-    public void TestNegativeRemoveNullIngredient() {
+    public void testNegativeRemoveNullIngredient() {
         burger.addIngredient(mockIngredient1);
 
         burger.removeIngredient(0);
@@ -92,23 +92,23 @@ public class BurgerTest {
 
     //Negative tests for remove ingredient
     @Test(expected = IndexOutOfBoundsException.class)
-    public void TestRemoveFromEmptyListThrowsException() {
+    public void testRemoveFromEmptyListThrowsException() {
         burger.removeIngredient(0);
     }
     @Test(expected = IndexOutOfBoundsException.class)
-    public void TestRemoveWithNegativeIndexThrowsException() {
+    public void testRemoveWithNegativeIndexThrowsException() {
         burger.addIngredient(mockIngredient1);
         burger.removeIngredient(-1);
     }
     @Test(expected = IndexOutOfBoundsException.class)
-    public void TestRemoveWithIndexOutOfBoundsThrowsException() {
+    public void testRemoveWithIndexOutOfBoundsThrowsException() {
         burger.addIngredient(mockIngredient1);
         burger.removeIngredient(1);
     }
 
 
     @Test
-    public void TestMoveIngredient() {
+    public void testMoveIngredient() {
         burger.addIngredient(mockIngredient1);
         burger.addIngredient(mockIngredient2);
 
@@ -121,14 +121,14 @@ public class BurgerTest {
 
     //Negative tests for move ingredient
     @Test(expected = IndexOutOfBoundsException.class)
-    public void TestMoveIngredientWithInvalidIndices() {
+    public void testMoveIngredientWithInvalidIndices() {
         burger.addIngredient(mockIngredient1);
         burger.addIngredient(mockIngredient2);
 
         burger.moveIngredient(-1, 0); // отрицательный индекс
     }
     @Test(expected = IndexOutOfBoundsException.class)
-    public void TestMoveIngredientToOutOfBoundsIndex() {
+    public void testMoveIngredientToOutOfBoundsIndex() {
         burger.addIngredient(mockIngredient1);
         burger.addIngredient(mockIngredient2);
 
@@ -136,7 +136,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void TesGetPrice() {
+    public void tesGetPrice() {
         Mockito.when(mockIngredient1.getPrice()).thenReturn(ingredientPrice);
         Mockito.when(mockBun.getPrice()).thenReturn(bunPrice);
 
@@ -147,7 +147,7 @@ public class BurgerTest {
     }
 
     @Test
-    public void TestGetReceipt() {
+    public void testGetReceipt() {
         Mockito.when(mockBun.getName()).thenReturn("mock_bun");
         Mockito.when(mockBun.getPrice()).thenReturn(100.0f);
         Mockito.when(mockIngredient1.getType()).thenReturn(IngredientType.SAUCE);
@@ -164,7 +164,7 @@ public class BurgerTest {
         assertTrue(receipt.contains("Price: 500.0"));
     }
     @Test
-    public void TestGetReceiptWithNoIngredients() {
+    public void testGetReceiptWithNoIngredients() {
         Mockito.when(mockBun.getName()).thenReturn("mock_bun");
         Mockito.when(mockBun.getPrice()).thenReturn(100.0f);
 

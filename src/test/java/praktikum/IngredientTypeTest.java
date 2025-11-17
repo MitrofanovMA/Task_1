@@ -7,13 +7,13 @@ import static org.junit.Assert.*;
 public class IngredientTypeTest {
 
     @Test
-    public void TestValues() {
+    public void testValues() {
         IngredientType[] values = IngredientType.values();
         assertNotNull(values);
     }
 
     @Test
-    public void TestValueOf() {
+    public void testValueOf() {
         assertEquals(IngredientType.SAUCE, IngredientType.valueOf("SAUCE"));
         assertEquals(IngredientType.FILLING, IngredientType.valueOf("FILLING"));
 
